@@ -25,9 +25,17 @@ This is a website for the fictitious boutique restaurant, LittleLemon, construct
 ( see https://djoser.readthedocs.io/en/latest/base_endpoints.html )
 
 * username field name: username
-* in order to login and obtaine a token you must make a POST request to '.../auth/token/login/
-* admin credentials:
-    * username: admin
-    * password: lemon@123!
+* in order to login, you must first create a user/superuser in your local database.
+     * python manage.py createsuperuser
+     * after creating the admin user, you can go ahead and create more by either:
+        * Sending a post request to .../auth/users/
+        * manually creating a user through the admin interface
+
+### Tests:
+* There are several unit tests inside tests.py and test_views.py
+* Running the command python manage.py test will execute these tests
+* Note that the tests use the sqlite database instead of your local mysql client.
+* There are tests fo all api functionalities in test_views
+* There are tests for model object creation and retrieval in tests.py
 
 
